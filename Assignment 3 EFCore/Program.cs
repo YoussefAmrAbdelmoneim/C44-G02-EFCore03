@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            using AirLineDBContext context = new AirLineDBContext();
         }
     }
 }
