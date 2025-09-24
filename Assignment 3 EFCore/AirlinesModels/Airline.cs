@@ -15,7 +15,7 @@ namespace Assignment_1_EFCore.AirlinesModels
         [MinLength(3)]
         public string? Name { get; set; }
         public string? Address { get; set; }
-        public int Cont_Person { get; set; }
+        public string? Cont_Person { get; set; }
         public ICollection<Employee> employee { get; set; } = new HashSet<Employee>();
         public ICollection<Transaction> transaction { get; set; } = new HashSet<Transaction>();
         public ICollection<Aircraft> aircraft { get; set; } = new HashSet<Aircraft>();

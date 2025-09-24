@@ -13,7 +13,7 @@ namespace Assignment_1_EFCore.AirlinesModels
         public int Id { get; set; }
         public string? Distance { get; set; }
         public string? Destination { get; set; }
-        public char Origin { get; set; }
+        public string? Origin { get; set; }
         public string? Classification { get; set; }
         public ICollection<Aircraft_Routes> aircraft_Routes { get; set; } = new HashSet<Aircraft_Routes>();
     }

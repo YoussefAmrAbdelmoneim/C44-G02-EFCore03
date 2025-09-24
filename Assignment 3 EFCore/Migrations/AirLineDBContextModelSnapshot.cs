@@ -43,7 +43,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasIndex("Al_Id");
 
-                    b.ToTable("Aircraft");
+                    b.ToTable("Aircraft", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Aircraft_Routes", b =>
@@ -70,7 +70,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasIndex("Route_Id");
 
-                    b.ToTable("aircraft_Routes");
+                    b.ToTable("aircraft_Routes", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Airline", b =>
@@ -84,8 +84,8 @@ namespace Assignment_3_EFCore.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Cont_Person")
-                        .HasColumnType("int");
+                    b.Property<string>("Cont_Person")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasMaxLength(40)
@@ -93,7 +93,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Airline");
+                    b.ToTable("Airline", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Airline_Phones", b =>
@@ -106,7 +106,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasKey("Al_Id", "Phones");
 
-                    b.ToTable("airline_Phones");
+                    b.ToTable("airline_Phones", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Emp_Qualifications", b =>
@@ -119,7 +119,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasKey("Emp_Id", "Qualifications");
 
-                    b.ToTable("emp_Qualifications");
+                    b.ToTable("emp_Qualifications", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Employee", b =>
@@ -163,7 +163,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasIndex("Al_Id");
 
-                    b.ToTable("employees");
+                    b.ToTable("employees", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Route", b =>
@@ -189,7 +189,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("routes");
+                    b.ToTable("routes", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Transaction", b =>
@@ -216,7 +216,7 @@ namespace Assignment_3_EFCore.Migrations
 
                     b.HasIndex("Al_Id");
 
-                    b.ToTable("transactions");
+                    b.ToTable("transactions", (string)null);
                 });
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Aircraft", b =>
@@ -249,7 +249,7 @@ namespace Assignment_3_EFCore.Migrations
 
                             b1.HasKey("AircraftId");
 
-                            b1.ToTable("Aircraft");
+                            b1.ToTable("Aircraft", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("AircraftId");

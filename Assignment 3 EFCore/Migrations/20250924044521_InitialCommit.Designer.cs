@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_3_EFCore.Migrations
 {
     [DbContext(typeof(AirLineDBContext))]
-    [Migration("20250924042305_InitialCommit")]
+    [Migration("20250924044521_InitialCommit")]
     partial class InitialCommit
     {
         /// <inheritdoc />
@@ -87,8 +87,8 @@ namespace Assignment_3_EFCore.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Cont_Person")
-                        .HasColumnType("int");
+                    b.Property<string>("Cont_Person")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasMaxLength(40)

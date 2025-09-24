@@ -19,7 +19,7 @@ namespace Assignment_3_EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cont_Person = table.Column<int>(type: "int", nullable: false)
+                    Cont_Person = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
