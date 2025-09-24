@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             using AirLineDBContext context = new AirLineDBContext();
+
         }
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment_3_EFCore.Migrations
 {
     [DbContext(typeof(AirLineDBContext))]
-    [Migration("20250924041129_InitialCommit")]
+    [Migration("20250924042305_InitialCommit")]
     partial class InitialCommit
     {
         /// <inheritdoc />
@@ -42,12 +42,9 @@ namespace Assignment_3_EFCore.Migrations
                     b.Property<string>("Model")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("aircraftId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("aircraftId");
+                    b.HasIndex("Al_Id");
 
                     b.ToTable("Aircraft");
                 });
@@ -227,9 +224,9 @@ namespace Assignment_3_EFCore.Migrations
 
             modelBuilder.Entity("Assignment_1_EFCore.AirlinesModels.Aircraft", b =>
                 {
-                    b.HasOne("Assignment_1_EFCore.AirlinesModels.Airline", "aircraft")
+                    b.HasOne("Assignment_1_EFCore.AirlinesModels.Airline", "airline")
                         .WithMany("aircraft")
-                        .HasForeignKey("aircraftId")
+                        .HasForeignKey("Al_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -261,7 +258,7 @@ namespace Assignment_3_EFCore.Migrations
                                 .HasForeignKey("AircraftId");
                         });
 
-                    b.Navigation("aircraft");
+                    b.Navigation("airline");
 
                     b.Navigation("crew")
                         .IsRequired();

@@ -15,9 +15,9 @@ namespace Assignment_1_EFCore.AirlinesModels
         public int Id { get; set; }
         public int Capacity { get; set; }
         public string? Model { get; set; }
-        [ForeignKey(nameof(Airline))]
+        [ForeignKey(nameof(airline))]
         public int Al_Id { get; set; }
-        public Airline aircraft { get; set; } = null!;
+        public Airline airline { get; set; } = null!;
         public Crew crew { get; set; } = null!;
         public ICollection<Aircraft_Routes> aircraft_Routes { get; set; } = new HashSet<Aircraft_Routes>();
     }

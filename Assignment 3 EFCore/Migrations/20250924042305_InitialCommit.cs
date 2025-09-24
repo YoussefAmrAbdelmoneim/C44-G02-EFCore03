@@ -51,7 +51,6 @@ namespace Assignment_3_EFCore.Migrations
                     Capacity = table.Column<int>(type: "int", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Al_Id = table.Column<int>(type: "int", nullable: false),
-                    aircraftId = table.Column<int>(type: "int", nullable: false),
                     crew_Maj_Pilot = table.Column<int>(type: "int", nullable: false),
                     crew_Assistant = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
                     crew_Host1 = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: true),
@@ -61,8 +60,8 @@ namespace Assignment_3_EFCore.Migrations
                 {
                     table.PrimaryKey("PK_Aircraft", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Aircraft_Airline_aircraftId",
-                        column: x => x.aircraftId,
+                        name: "FK_Aircraft_Airline_Al_Id",
+                        column: x => x.Al_Id,
                         principalTable: "Airline",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -181,9 +180,9 @@ namespace Assignment_3_EFCore.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Aircraft_aircraftId",
+                name: "IX_Aircraft_Al_Id",
                 table: "Aircraft",
-                column: "aircraftId");
+                column: "Al_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_aircraft_Routes_Route_Id",
